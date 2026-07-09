@@ -4,23 +4,24 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>[Company] Hub</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-
 <nav class="topnav">
   <div class="brand"><span class="dot"></span>[Company] Hub</div>
-  <div class="nav-links">
+  <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <div class="nav-links" data-nav-links>
     <a href="/apps.html">Apps</a>
-    <a href="/team.html">Team Photos</a>
+    <a href="/apps.html#photos">Team Photos</a>
     <a href="/admin.html">Admin</a>
   </div>
 </nav>
 
 <section class="hero">
-  <span class="eyebrow">Internal · v1</span>
-  <h1>Everything the team needs, in one place.</h1>
-  <p>A single home for the tools we use and the people who use them. Add an app, upload a photo, done — no code required.</p>
+  <span class="eyebrow">internal · v1</span>
+  <h1>Everything the team needs, <span class="underline">in one place.</span></h1>
+  <p>One home for the tools we use and the people who use them. Add an app, upload a photo, done — no code, no tickets, no waiting on IT.</p>
   <div class="hero-actions">
     <a class="btn btn-primary" href="/apps.html">Browse apps</a>
     <a class="btn btn-ghost" href="/admin.html">Open admin</a>
@@ -44,6 +45,11 @@
     <div class="status-bar"><span style="width:100%"></span></div>
   </div>
 </div>
+
+<footer class="site-footer">
+  <span>[Company] Hub — built in-house, held together with duct tape.</span>
+  <span class="hand">say hi if something's broken :)</span>
+</footer>
 
 <script src="/js/main.js"></script>
 </body>
