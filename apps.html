@@ -3,40 +3,56 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Apps · [Company] Hub</title>
+<title>Apps &amp; Photos · [Company] Hub</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 <nav class="topnav">
   <div class="brand"><span class="dot"></span>[Company] Hub</div>
-  <div class="nav-links">
+  <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <div class="nav-links" data-nav-links>
     <a href="/apps.html">Apps</a>
-    <a href="/team.html">Team Photos</a>
+    <a href="/apps.html#photos">Team Photos</a>
     <a href="/admin.html">Admin</a>
   </div>
 </nav>
 
 <section class="hero" style="padding-bottom: 20px;">
-  <span class="eyebrow">Directory</span>
-  <h1>Apps &amp; tools</h1>
-  <p>Everything the team has built or connected, kept in one directory instead of a dozen bookmarks.</p>
+  <span class="eyebrow">everything, one place</span>
+  <h1>Apps &amp; the people<br />who use them.</h1>
+  <p>Tools we've built or bolted together, and the faces behind them. Search catches both — no need to know which one you're after.</p>
 </section>
 
-<div class="section" data-apps-section>
+<div class="section" data-content-section>
   <div class="search-row">
-    <input type="search" id="appSearch" class="search-input" placeholder="Search apps..." autocomplete="off" />
+    <input type="search" id="siteSearch" class="search-input" placeholder="Search apps or people..." autocomplete="off" />
   </div>
 
-  <div class="recents-row" data-recents-row style="display: none;">
-    <span class="recents-label">Recently opened</span>
-  </div>
+  <div class="recents-row" data-recents-row style="display: none;"></div>
 
-  <div class="section-head">
-    <h2>All apps</h2>
-  </div>
-  <div class="grid" data-apps-grid>
-    <div class="empty-state">Loading…</div>
+  <div class="split-grid">
+    <div class="split-col" id="apps">
+      <div class="section-head">
+        <h2>Apps</h2>
+        <span class="count" data-apps-count></span>
+      </div>
+      <div class="grid" data-apps-grid>
+        <div class="empty-state">Loading…</div>
+      </div>
+    </div>
+
+    <div class="split-divider" aria-hidden="true"></div>
+
+    <div class="split-col" id="photos">
+      <div class="section-head">
+        <h2>Team photos</h2>
+        <span class="count" data-photos-count></span>
+      </div>
+      <div class="photo-grid" data-photo-grid>
+        <div class="empty-state">Loading…</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -48,10 +64,18 @@
     </div>
     <a class="app-viewer-open" data-viewer-open href="#" target="_blank" rel="noopener">Open in new tab &#8599;</a>
   </div>
-  <div class="app-viewer-frame-wrap">
+  <div class="app-viewer-frame-wrap" data-viewer-frame-wrap>
     <iframe data-viewer-frame src="about:blank" title="App viewer" loading="lazy"></iframe>
   </div>
+  <div class="app-viewer-image-wrap" data-viewer-image-wrap style="display: none;">
+    <img data-viewer-image src="" alt="" />
+  </div>
 </div>
+
+<footer class="site-footer">
+  <span>[Company] Hub — built in-house, held together with duct tape.</span>
+  <span class="hand">say hi if something's broken :)</span>
+</footer>
 
 <script src="/js/main.js"></script>
 </body>
