@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · [Company] Hub</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<!-- Login screen -->
+<div class="login-shell" id="login-shell">
+  <div class="login-card">
+    <h2>Admin sign in</h2>
+    <div class="form-row">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••" />
+    </div>
+    <button class="btn btn-primary" id="login-btn" style="width:100%; justify-content:center;">Sign in</button>
+    <p id="login-error" style="color:var(--danger); font-size:0.85rem; margin-top:12px; display:none;">Incorrect password.</p>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div class="admin-shell" id="admin-shell" style="display:none;">
+  <aside class="sidebar">
+    <div class="brand" style="margin-bottom:24px;"><span class="dot"></span>[Company] Hub</div>
+    <div class="sidebar-link active" data-panel="apps">Apps</div>
+    <div class="sidebar-link" data-panel="photos">Team Photos</div>
+    <div class="sidebar-link" id="logout-btn" style="margin-top:20px; color:var(--danger);">Sign out</div>
+  </aside>
+
+  <main class="admin-content">
+    <!-- Apps panel -->
+    <section class="panel active" id="panel-apps">
+      <div class="section-head" style="margin-top:0;">
+        <h2>Manage apps</h2>
+      </div>
+
+      <div class="card" style="margin-bottom: 28px;">
+        <div class="form-row">
+          <label>Name</label>
+          <input type="text" id="app-name" placeholder="e.g. Time Tracker" />
+        </div>
+        <div class="form-row">
+          <label>Link (URL)</label>
+          <input type="text" id="app-url" placeholder="https://..." />
+        </div>
+        <div class="form-row">
+          <label>Description</label>
+          <textarea id="app-desc" rows="2" placeholder="What does this app do?"></textarea>
+        </div>
+        <div class="form-row">
+          <label>Icon letters (optional, e.g. TT)</label>
+          <input type="text" id="app-icon" placeholder="TT" maxlength="2" />
+        </div>
+        <button class="btn btn-primary" id="add-app-btn">Add app</button>
+      </div>
+
+      <div id="apps-list"></div>
+    </section>
+
+    <!-- Photos panel -->
+    <section class="panel" id="panel-photos">
+      <div class="section-head" style="margin-top:0;">
+        <h2>Manage team photos</h2>
+      </div>
+
+      <div class="card" style="margin-bottom: 28px;">
+        <div class="form-row">
+          <label>Employee name</label>
+          <input type="text" id="photo-name" placeholder="e.g. Jordan Lee" />
+        </div>
+        <div class="form-row">
+          <label>Photo file</label>
+          <input type="file" id="photo-file" accept="image/*" />
+        </div>
+        <button class="btn btn-primary" id="add-photo-btn">Upload photo</button>
+      </div>
+
+      <div id="photos-list"></div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>

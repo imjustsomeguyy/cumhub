@@ -1,0 +1,12 @@
+name = "company-hub"
+compatibility_date = "2026-07-01"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "company-hub-db"
+database_id = "d00382b6-6077-47fb-ac97-94a1fb3aafe0"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "company-hub-images"
